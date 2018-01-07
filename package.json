@@ -1,0 +1,9 @@
+{
+  "name": "wedding-site",
+  "version": "1.0.0",
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+    "blendid": "^4.3.1"
+  }
+}
