@@ -9,6 +9,12 @@ $content-dark: rgba(0,0,0,0.54);
 $content-xdark: rgba(0,0,0,0.87);
 $content-xxdark: rgba(0,0,0,1);
 
+$content-inverse-xlight: rgba(255,255,255,0.12);
+$content-inverse-light: rgba(255,255,255,0.38);
+$content-inverse-dark: rgba(255,255,255,0.54);
+$content-inverse-xdark: rgba(255,255,255,0.87);
+$content-inverse-xxdark: rgba(255,255,255,1);
+
 // Font Size
 $font-xsmall: 14rem / 16;
 $font-small: 18rem / 16;
@@ -68,21 +74,10 @@ html {
   @media (max-width: 480px) {
     font-size: 12px;
   }
-  @media (max-width: 380px) {
-    font-size: 11px;
-  }
 }
 body {
   background-color: $color-background;
   margin: 0;
-}
-main {
-  // -webkit-backdrop-filter: blur(20px);
-  // background-color: rgba(255, 255, 255, .9);
-  // box-shadow: 0 0 30px 0px rgba(0, 0, 0, .2);
-  // margin: auto;
-  // max-width: 400px;
-  // padding: $spacing-unit * 2;
 }
 
 // Container
@@ -126,7 +121,7 @@ main {
 
   @media (max-width: 940px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, minmax(auto, 33vw));
+    grid-template-rows: repeat(3, minmax(auto, 33.333vw));
   }
   &::after {
     background: linear-gradient(rgba($color-background, 0), rgba($color-background, 1));
@@ -135,6 +130,10 @@ main {
     position: absolute;
     height: 10vw;
     width: 100%;
+
+    @media (max-width: 940px) {
+      height: 33.333vw * 0.5;
+    }
   }
   .grid-test__image {
     background-size: cover;
@@ -148,12 +147,12 @@ main {
 .heading--medium,
 .heading--large {
   color: $content-xdark;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0;
 }
 .heading--medium {
   font-size: $font-small;
-  line-height: $leading-small;
+  line-height: $leading-medium;
 }
 .heading--large {
   color: $color-primary;
@@ -209,7 +208,7 @@ main {
 }
 .text--small {
   font-size: $font-small;
-  line-height: $leading-small;
+  line-height: $leading-medium;
 }
 .text--medium {
   font-size: $font-medium;
@@ -237,7 +236,7 @@ main {
 .link,
 .link--with-chevron {
   color: $color-primary;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
 
   &:hover {
@@ -249,14 +248,16 @@ main {
   right: -3px;
 
   &:after {
-    content: ' ›'
+    content: ' ›';
+    display: inline-block;
+    transition: transform 300ms;
+  }
+  &:hover:after {
+    transform: translateX(2px);
   }
 }
 
 // Spacing
-.spacing--bottom-xsmall {
-  margin-bottom: $spacing-unit / 2;
-}
 .spacing--bottom-small {
   margin-bottom: $spacing-unit;
 }
@@ -267,15 +268,12 @@ main {
   margin-bottom: $spacing-unit * 4;
 }
 .spacing--bottom-xlarge {
-  margin-bottom: $spacing-unit * 4;
+  margin-bottom: $spacing-unit * 6;
 }
 .spacing--bottom-xxlarge {
   margin-bottom: $spacing-unit * 8;
 }
 .spacing--top-small {
-  margin-top: $spacing-unit / 2;
-}
-.spacing--top-xsmall {
   margin-top: $spacing-unit;
 }
 .spacing--top-medium {
@@ -305,10 +303,10 @@ main {
 .schedule__event {
   @extend .text--small;
   display: table-cell;
-  padding-top: $spacing-unit;
+  padding-top: $spacing-unit / 2;
 }
 .schedule__time {
-  padding-right: $spacing-unit * 2;
+  padding-right: $spacing-unit;
   white-space: nowrap;
 }
 .schedule__event {
