@@ -4,6 +4,6 @@
   "main": "index.html",
   "license": "MIT",
   "dependencies": {
-    "blendid": "^4.3.1"
+    "blendid": "^4.4.3"
   }
 }
