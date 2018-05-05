@@ -198,6 +198,14 @@ p {
   color: $content-light;
 }
 
+// Dropcap
+.dropcap:first-letter {
+  font-size: 3.5em;
+  float: left;
+  margin-right: $spacing-unit / 4;
+  margin-top: .25em;
+}
+
 // Link
 .link,
 .link--with-chevron {
