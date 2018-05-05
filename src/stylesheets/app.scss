@@ -1,4 +1,3 @@
-
 @import './base/typography';
 
 // Color
@@ -110,15 +109,6 @@ p {
   max-width: 500px;
 }
 
-// Divider
-.divider {
-  background-color: $content-light;
-  border: none;
-  height: 2px;
-  margin: 0 auto;
-  width: 33.333%;
-}
-
 // Heading
 .heading--small,
 .heading--medium,
@@ -168,13 +158,6 @@ p {
   &::before {
     color: $content-light;
     content: '—\00a0'
-  }
-}
-
-// Hidden
-.hidden\@small {
-  @media (max-width: $media-large) {
-    display: none;
   }
 }
 
@@ -239,12 +222,6 @@ p {
 }
 
 // Spacing
-.spacing--bottom-xxsmall {
-  margin-bottom: $spacing-unit / 4;
-}
-.spacing--bottom-xsmall {
-  margin-bottom: $spacing-unit / 2;
-}
 .spacing--bottom-small {
   margin-bottom: $spacing-unit;
 }
@@ -322,7 +299,7 @@ p {
   }
 }
 
-// Date Location
+// Event Details
 .event-details {
   display: flex;
   flex-direction: column;
@@ -350,12 +327,9 @@ p {
   }
 }
 
-.event-details__date {
-
-}
-
 // Footer
 .footer--image {
+  height: auto;
   position: absolute;
-  width: 100vw;
+  width: 100%;
 }
