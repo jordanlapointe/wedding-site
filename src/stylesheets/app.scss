@@ -36,7 +36,8 @@ $leading-xlarge: 48rem / 16;
 
 // Media Queries
 $media-small: 440px;
-$media-large: 940px;
+$media-medium: 600px;
+$media-large: 700px;
 
 // Spacing unit
 $spacing-unit: 16rem / 16;
@@ -93,6 +94,12 @@ body {
 p {
   margin: 0;
 }
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
 
 // Container
 .container--small,
@@ -107,6 +114,48 @@ p {
 .container--medium {
   margin: auto;
   max-width: 500px;
+}
+
+// Dropcap
+.dropcap:first-letter {
+  font-size: 3.5em;
+  float: left;
+  margin-right: $spacing-unit / 4;
+  margin-top: .25em;
+}
+
+// Event Details
+.event-details {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+
+  @media (min-width: $media-medium) {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: $spacing-unit * 4;
+  }
+}
+.event-details__item {
+  list-style: none;
+
+  @media (min-width: $media-medium) {
+    &:not(:first-child) {
+      margin-left: $spacing-unit * 8;
+    }
+  }
+  @media (max-width: $media-medium) {
+    &:not(:first-child) {
+      margin-top: $spacing-unit * 2;
+    }
+  }
+}
+
+// Footer
+.footer--image {
+  height: auto;
+  position: absolute;
+  width: 100%;
 }
 
 // Heading
@@ -161,6 +210,29 @@ p {
   }
 }
 
+// Hero
+.hero {
+  background-repeat: no-repeat;
+
+  @media (max-width: $media-large) {
+    background-image: url("../images/flower-corner-right.jpg");
+    background-position: top right;
+    background-size: 50% auto;
+    padding-bottom: $spacing-unit * 2;
+    padding-top: 15vh;
+  }
+  @media (min-width: $media-large) {
+    align-items: center;
+    background-image: url("../images/name_bg_navy.jpg");
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-unit * 2;
+    min-height: 400px;
+  }
+}
+
 // Text
 .text--xsmall,
 .text--small,
@@ -198,17 +270,10 @@ p {
   color: $content-light;
 }
 
-// Dropcap
-.dropcap:first-letter {
-  font-size: 3.5em;
-  float: left;
-  margin-right: $spacing-unit / 4;
-  margin-top: .25em;
-}
-
 // Link
 .link,
 .link--with-chevron {
+  color: $content-xdark;
   text-decoration: none;
 
   &:hover {
@@ -227,6 +292,10 @@ p {
   &:hover:after {
     transform: translateX(2px);
   }
+}
+
+.link--underline {
+  text-decoration: underline;
 }
 
 // Spacing
@@ -283,62 +352,4 @@ p {
   color: $content-dark;
   padding-right: $spacing-unit * 2;
   white-space: nowrap;
-}
-
-// Hero
-.hero {
-  background-repeat: no-repeat;
-
-  @media (max-width: $media-large) {
-    background-image: url("../images/flower-corner-right.jpg");
-    background-position: top right;
-    background-size: 50% auto;
-    padding-bottom: 10vh;
-    padding-top: 20vh;
-  }
-  @media (min-width: $media-large) {
-    align-items: center;
-    background-image: url("../images/name_bg_navy.jpg");
-    background-position: center;
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    min-height: 540px;
-    height: 100vh;
-  }
-}
-
-// Event Details
-.event-details {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-
-  @media (min-width: $media-large) {
-    flex-direction: row;
-    justify-content: center;
-    margin-top: $spacing-unit * 4;
-  }
-}
-
-.event-details__item {
-  list-style: none;
-
-  @media (min-width: $media-large) {
-    &:not(:first-child) {
-      margin-left: $spacing-unit * 8;
-    }
-  }
-  @media (max-width: $media-large) {
-    &:not(:first-child) {
-      margin-top: $spacing-unit * 2;
-    }
-  }
-}
-
-// Footer
-.footer--image {
-  height: auto;
-  position: absolute;
-  width: 100%;
 }
