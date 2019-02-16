@@ -94,6 +94,9 @@ body {
 p {
   margin: 0;
 }
+small {
+  font-size: $font-xsmall;
+}
 ul {
   list-style: none;
   padding-left: 0;
@@ -162,6 +165,7 @@ ul {
 .heading--small,
 .heading--medium,
 .heading--large,
+.heading--xlarge,
 .heading--xxlarge {
   font-family: $font-family-heading;
   font-weight: 300;
@@ -208,6 +212,10 @@ ul {
     color: $content-light;
     content: '—\00a0'
   }
+}
+.heading--separated {
+  border-top: 1px solid $content-light;
+  padding-top: $spacing-unit / 2;
 }
 
 // Hero
@@ -266,6 +274,9 @@ ul {
 .text--centered {
   text-align: center;
 }
+.text--dark {
+  color: $content-xdark;
+}
 .text--light {
   color: $content-light;
 }
@@ -299,6 +310,9 @@ ul {
 }
 
 // Spacing
+.spacing--bottom-xsmall {
+  margin-bottom: $spacing-unit / 2;
+}
 .spacing--bottom-small {
   margin-bottom: $spacing-unit;
 }
