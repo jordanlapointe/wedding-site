@@ -105,6 +105,12 @@ ul {
 }
 
 // Container
+.container--divided {
+  border-bottom: 2px solid $content-light;
+  border-top: 2px solid $content-light;
+  padding-bottom: $spacing-unit;
+  padding-top: $spacing-unit;
+}
 .container--small,
 .container--medium {
   padding-left: $spacing-unit;
@@ -293,11 +299,12 @@ ul {
 }
 .link--with-chevron {
   position: relative;
-  right: -3px;
+  right: -0.4em;
 
   &:after {
-    content: ' ›';
+    content: '›';
     display: inline-block;
+    margin-left: 0.25em;
     transition: transform 300ms;
   }
   &:hover:after {
